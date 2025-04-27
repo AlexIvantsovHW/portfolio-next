@@ -17,7 +17,7 @@ export const EducationWidget = () => {
     <div>
       Education widget
       <i.UniversityListSkillet data={memoUniversityData} />
-      <button onClick={() => setValue(value + 1)}>click</button>
+      <button onClick={() => setValue(value + 1)}>clicks</button>
     </div>
   );
 };
