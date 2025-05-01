@@ -1,7 +1,7 @@
 import { Projects } from "@/src/shared/types/projects.type";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { setData } from "./slice/projects.slice";
-
+console.log("BASE URL", process.env.BASE_URL);
 export const projectsApi = createApi({
   reducerPath: "projectsApi",
   baseQuery: fetchBaseQuery({ baseUrl: process.env.BASE_URL }),
