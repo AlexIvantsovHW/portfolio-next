@@ -1,6 +1,11 @@
-import * as i from "./imports";
+import { useGetAllProjectsQuery } from "@/src/shared/api/requests/projects/projects.api";
+import { HeadMeta } from "@/src/widgets/HeadMeta/HeadMeta";
+import ProjectWidget from "@/src/widgets/project-widget/project-widget";
+
+import { Skeleton } from "@mui/material";
+
 const Projects = () => {
-  const { data, isLoading } = i.useGetAllProjectsQuery(20);
+  const { data, isLoading } = useGetAllProjectsQuery(20);
 
   return (
     <>
@@ -17,11 +22,11 @@ const Projects = () => {
           <div className="w-full h-fit flex items-center justify-around">
             {" "}
             {[1, 2].map((el) => (
-              <i.Skeleton variant="rounded" width={210} height={250} />
+              <Skeleton variant="rounded" width={210} height={250} />
             ))}
           </div>
         ) : (
-          <i.ProjectWidget />
+          <ProjectWidget />
         )}
       </main>
     </>
